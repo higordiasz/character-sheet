@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+<head>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lorem Adventures" />
+    <meta property="og:description" content="Ficha do Mestre." />
+    <meta property="og:image" content="https://i.imgur.com/xNKiLFt.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://dias.li" />
+    <meta property="og:site_name" content="Ficha de RPG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@higordiasz" />
+    <meta charset="utf-8">
+    <meta name="description" content="Ficha do Mestre.">
+    <meta name="author" content="Dias">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="images/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/dz180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/dz32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/dz16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Ficha de Personagem</title>
+    <link rel="stylesheet" href="../css/mestre.css">
+    <script src="../js/mestre.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="token char1">
+            <div class="title">
+                <div class="info">
+                    <div class="name">
+                        <div class="name_title">
+                            <span>NOME DO PERSONAGEM:</span>
+                        </div>
+                        <div class="name_text">
+                            <input name="char1_character_name" id="char1_character_name" type="text"
+                                placeholder="Nome do personagem" value="Nome do Personagem" readonly>
+                        </div>
+                    </div>
+                    <div class="class">
+                        <div class="class_title">
+                            <span>CLASSE</span>
+                        </div>
+                        <div class="class_name">
+                            <input name="char1_class_name" id="char1_class_name" type="text" placeholder="Classe"
+                                value="Classe" readonly>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="level_title">
+                            <span>LEVEL</span>
+                        </div>
+                        <div class="level_name">
+                            <input name="char1_level" id="char1_level" type="number" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats_container">
+                <div class="column_stats">
+                    <div class="column_title">
+                        <span>ATRIBUTOS</span>
+                    </div>
+                    <div class="column_stats_content">
+                        <div class="row">
+                            <div class="stats strength">
+                                <span>FORÇA</span>
+                                <input name="char1_strenght" id="char1_strength" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats intelligence">
+                                <span>INTELIGÊNCIA</span>
+                                <input name="char1_intelligence" id="char1_intelligence" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats dexterity">
+                                <span>DESTREZA</span>
+                                <input name="char1_dexterity" id="char1_desterity" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats wisdom">
+                                <span>SABEDORIA</span>
+                                <input name="char1_wisdom" id="char1_wisdom" type="number" value="0" min="0" max="10"
+                                    readonly>
+                            </div>
+                            <div class="stats constitution">
+                                <span>CONSTITUIÇÃO</span>
+                                <input name="char1_constitution" id="char1_constitution" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats charisma">
+                                <span>CARISMA</span>
+                                <input name="char1_charisma" id="char1_charisma" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_info">
+                    <div class="row flex_row margin_row">
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>INICIATIVA</span>
+                            </div>
+                            <div class="iniciativa" id="char1_iniciativa_value"
+                                data-tooltip="Indica os dados que deve rolar para definir a sua iniciativa.">
+                                <span>1d20 + 0</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>DESLOC</span>
+                            </div>
+                            <div id="char1_deslocamento_value" class="deslocamento"
+                                data-tooltip="Quantidade de metros que consegue se locomover.">
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>CA</span>
+                            </div>
+                            <div class="life" data-tooltip="Classe de armadura.">
+                                <input name="char1_ca_value" id="char1_ca_value" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>SANIDADE</span>
+                            </div>
+                            <div class="sanity">
+                                <input name="char1_sanity_value" id="char1_sanity_value" type="number" value="100"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>VIDA</span>
+                            </div>
+                            <div class="life">
+                                <input name="char1_life_actual" id="char1_life_actual" type="number" value="10"
+                                    readonly>
+                                <span> / </span>
+                                <input name="char1_life_max" id="char1_life_max" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carring">
+                <div class="row flex_row">
+                    <div class="column">
+                        <div class="column_title">
+                            <span>EQUIPAMENTOS ATUAIS</span>
+                        </div>
+                        <table name="table_actual">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Def</th>
+                                <th>Dur</th>
+                            </tr>
+                            <tr>
+                                <td><input name="char1_equipament_helmet_name" id="char1_equipament_helmet_name"
+                                        type="text" value="valor teste teste" readonly>
+                                </td>
+                                <td><input name="char1_equipament_helmet_value" id="char1_equipament_helmet_value"
+                                        type="number" value="10" readonly></td>
+                                <td><input name="char1_equipament_helmet_durability"
+                                        id="char1_equipament_helmet_durability" type="number" value="10" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char1_equipament_chestplate_name" id="char1_equipament_chestplate_name"
+                                        type="text" value="" readonly></td>
+                                <td><input name="char1_equipament_chestplate_value"
+                                        id="char1_equipament_chestplate_value" type="number" value="" readonly></td>
+                                <td><input name="char1_equipament_chestplate_durability"
+                                        id="char1_equipament_chestplate_durability" type="number" value="" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input name="char1_equipament_legs_name" id="char1_equipament_legs_name" type="text"
+                                        value="" readonly>
+                                </td>
+                                <td><input name="char1_equipament_legs_value" id="char1_equipament_legs_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char1_equipament_legs_durability" id="char1_equipament_legs_durability"
+                                        type="number" value="" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char1_equipament_boots_name" id="char1_equipament_boots_name"
+                                        type="text" value="" readonly>
+                                </td>
+                                <td><input name="char1_equipament_boots_value" id="char1_equipament_boots_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char1_equipament_boots_durability"
+                                        id="char1_equipament_boots_durability" type="number" value="" readonly></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="column">
+                        <div class="column_title">
+                            <span>MOCHILA</span>
+                        </div>
+                        <div class="mochila">
+                            <textarea name="char1_bag_text" id="char1_bag_text" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="token char2">
+            <div class="title">
+                <div class="info">
+                    <div class="name">
+                        <div class="name_title">
+                            <span>NOME DO PERSONAGEM:</span>
+                        </div>
+                        <div class="name_text">
+                            <input name="char2_character_name" id="char2_character_name" type="text"
+                                placeholder="Nome do personagem" value="Nome do Personagem" readonly>
+                        </div>
+                    </div>
+                    <div class="class">
+                        <div class="class_title">
+                            <span>CLASSE</span>
+                        </div>
+                        <div class="class_name">
+                            <input name="char2_class_name" id="char2_class_name" type="text" placeholder="Classe"
+                                value="Classe" readonly>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="level_title">
+                            <span>LEVEL</span>
+                        </div>
+                        <div class="level_name">
+                            <input name="char2_level" id="char2_level" type="number" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats_container">
+                <div class="column_stats">
+                    <div class="column_title">
+                        <span>ATRIBUTOS</span>
+                    </div>
+                    <div class="column_stats_content">
+                        <div class="row">
+                            <div class="stats strength">
+                                <span>FORÇA</span>
+                                <input name="char2_strenght" id="char2_strength" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats intelligence">
+                                <span>INTELIGÊNCIA</span>
+                                <input name="char2_intelligence" id="char2_intelligence" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats dexterity">
+                                <span>DESTREZA</span>
+                                <input name="char2_dexterity" id="char2_desterity" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats wisdom">
+                                <span>SABEDORIA</span>
+                                <input name="char2_wisdom" id="char2_wisdom" type="number" value="0" min="0" max="10"
+                                    readonly>
+                            </div>
+                            <div class="stats constitution">
+                                <span>CONSTITUIÇÃO</span>
+                                <input name="char2_constitution" id="char2_constitution" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats charisma">
+                                <span>CARISMA</span>
+                                <input name="char2_charisma" id="char2_charisma" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_info">
+                    <div class="row flex_row margin_row">
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>INICIATIVA</span>
+                            </div>
+                            <div class="iniciativa" id="char2_iniciativa_value"
+                                data-tooltip="Indica os dados que deve rolar para definir a sua iniciativa.">
+                                <span>1d20 + 0</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>DESLOC</span>
+                            </div>
+                            <div id="char2_deslocamento_value" class="deslocamento"
+                                data-tooltip="Quantidade de metros que consegue se locomover.">
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>CA</span>
+                            </div>
+                            <div class="life" data-tooltip="Classe de armadura.">
+                                <input name="char2_ca_value" id="char2_ca_value" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>SANIDADE</span>
+                            </div>
+                            <div class="sanity">
+                                <input name="char2_sanity_value" id="char2_sanity_value" type="number" value="100"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>VIDA</span>
+                            </div>
+                            <div class="life">
+                                <input name="char2_life_actual" id="char2_life_actual" type="number" value="10"
+                                    readonly>
+                                <span> / </span>
+                                <input name="char2_life_max" id="char2_life_max" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carring">
+                <div class="row flex_row">
+                    <div class="column">
+                        <div class="column_title">
+                            <span>EQUIPAMENTOS ATUAIS</span>
+                        </div>
+                        <table name="table_actual">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Def</th>
+                                <th>Dur</th>
+                            </tr>
+                            <tr>
+                                <td><input name="char2_equipament_helmet_name" id="char2_equipament_helmet_name"
+                                        type="text" value="valor teste teste" readonly>
+                                </td>
+                                <td><input name="char2_equipament_helmet_value" id="char2_equipament_helmet_value"
+                                        type="number" value="10" readonly></td>
+                                <td><input name="char2_equipament_helmet_durability"
+                                        id="char2_equipament_helmet_durability" type="number" value="10" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char2_equipament_chestplate_name" id="char2_equipament_chestplate_name"
+                                        type="text" value="" readonly></td>
+                                <td><input name="char2_equipament_chestplate_value"
+                                        id="char2_equipament_chestplate_value" type="number" value="" readonly></td>
+                                <td><input name="char2_equipament_chestplate_durability"
+                                        id="char2_equipament_chestplate_durability" type="number" value="" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input name="char2_equipament_legs_name" id="char2_equipament_legs_name" type="text"
+                                        value="" readonly>
+                                </td>
+                                <td><input name="char2_equipament_legs_value" id="char2_equipament_legs_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char2_equipament_legs_durability" id="char2_equipament_legs_durability"
+                                        type="number" value="" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char2_equipament_boots_name" id="char2_equipament_boots_name"
+                                        type="text" value="" readonly>
+                                </td>
+                                <td><input name="char2_equipament_boots_value" id="char2_equipament_boots_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char2_equipament_boots_durability"
+                                        id="char2_equipament_boots_durability" type="number" value="" readonly></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="column">
+                        <div class="column_title">
+                            <span>MOCHILA</span>
+                        </div>
+                        <div class="mochila">
+                            <textarea name="char2_bag_text" id="char2_bag_text" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="token char3">
+            <div class="title">
+                <div class="info">
+                    <div class="name">
+                        <div class="name_title">
+                            <span>NOME DO PERSONAGEM:</span>
+                        </div>
+                        <div class="name_text">
+                            <input name="char3_character_name" id="char3_character_name" type="text"
+                                placeholder="Nome do personagem" value="Nome do Personagem" readonly>
+                        </div>
+                    </div>
+                    <div class="class">
+                        <div class="class_title">
+                            <span>CLASSE</span>
+                        </div>
+                        <div class="class_name">
+                            <input name="char3_class_name" id="char3_class_name" type="text" placeholder="Classe"
+                                value="Classe" readonly>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="level_title">
+                            <span>LEVEL</span>
+                        </div>
+                        <div class="level_name">
+                            <input name="char3_level" id="char3_level" type="number" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats_container">
+                <div class="column_stats">
+                    <div class="column_title">
+                        <span>ATRIBUTOS</span>
+                    </div>
+                    <div class="column_stats_content">
+                        <div class="row">
+                            <div class="stats strength">
+                                <span>FORÇA</span>
+                                <input name="char3_strenght" id="char3_strength" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats intelligence">
+                                <span>INTELIGÊNCIA</span>
+                                <input name="char3_intelligence" id="char3_intelligence" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats dexterity">
+                                <span>DESTREZA</span>
+                                <input name="char3_dexterity" id="char3_desterity" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats wisdom">
+                                <span>SABEDORIA</span>
+                                <input name="char3_wisdom" id="char3_wisdom" type="number" value="0" min="0" max="10"
+                                    readonly>
+                            </div>
+                            <div class="stats constitution">
+                                <span>CONSTITUIÇÃO</span>
+                                <input name="char3_constitution" id="char3_constitution" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats charisma">
+                                <span>CARISMA</span>
+                                <input name="char3_charisma" id="char3_charisma" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_info">
+                    <div class="row flex_row margin_row">
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>INICIATIVA</span>
+                            </div>
+                            <div class="iniciativa" id="char3_iniciativa_value"
+                                data-tooltip="Indica os dados que deve rolar para definir a sua iniciativa.">
+                                <span>1d20 + 0</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>DESLOC</span>
+                            </div>
+                            <div id="char3_deslocamento_value" class="deslocamento"
+                                data-tooltip="Quantidade de metros que consegue se locomover.">
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>CA</span>
+                            </div>
+                            <div class="life" data-tooltip="Classe de armadura.">
+                                <input name="char3_ca_value" id="char3_ca_value" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>SANIDADE</span>
+                            </div>
+                            <div class="sanity">
+                                <input name="char3_sanity_value" id="char3_sanity_value" type="number" value="100"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>VIDA</span>
+                            </div>
+                            <div class="life">
+                                <input name="char3_life_actual" id="char3_life_actual" type="number" value="10"
+                                    readonly>
+                                <span> / </span>
+                                <input name="char3_life_max" id="char3_life_max" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carring">
+                <div class="row flex_row">
+                    <div class="column">
+                        <div class="column_title">
+                            <span>EQUIPAMENTOS ATUAIS</span>
+                        </div>
+                        <table name="table_actual">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Def</th>
+                                <th>Dur</th>
+                            </tr>
+                            <tr>
+                                <td><input name="char3_equipament_helmet_name" id="char3_equipament_helmet_name"
+                                        type="text" value="valor teste teste" readonly>
+                                </td>
+                                <td><input name="char3_equipament_helmet_value" id="char3_equipament_helmet_value"
+                                        type="number" value="10" readonly></td>
+                                <td><input name="char3_equipament_helmet_durability"
+                                        id="char3_equipament_helmet_durability" type="number" value="10" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char3_equipament_chestplate_name" id="char3_equipament_chestplate_name"
+                                        type="text" value="" readonly></td>
+                                <td><input name="char3_equipament_chestplate_value"
+                                        id="char3_equipament_chestplate_value" type="number" value="" readonly></td>
+                                <td><input name="char3_equipament_chestplate_durability"
+                                        id="char3_equipament_chestplate_durability" type="number" value="" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input name="char3_equipament_legs_name" id="char3_equipament_legs_name" type="text"
+                                        value="" readonly>
+                                </td>
+                                <td><input name="char3_equipament_legs_value" id="char3_equipament_legs_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char3_equipament_legs_durability" id="char3_equipament_legs_durability"
+                                        type="number" value="" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char3_equipament_boots_name" id="char3_equipament_boots_name"
+                                        type="text" value="" readonly>
+                                </td>
+                                <td><input name="char3_equipament_boots_value" id="char3_equipament_boots_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char3_equipament_boots_durability"
+                                        id="char3_equipament_boots_durability" type="number" value="" readonly></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="column">
+                        <div class="column_title">
+                            <span>MOCHILA</span>
+                        </div>
+                        <div class="mochila">
+                            <textarea name="char3_bag_text" id="char3_bag_text" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="token char4">
+            <div class="title">
+                <div class="info">
+                    <div class="name">
+                        <div class="name_title">
+                            <span>NOME DO PERSONAGEM:</span>
+                        </div>
+                        <div class="name_text">
+                            <input name="char4_character_name" id="char4_character_name" type="text"
+                                placeholder="Nome do personagem" value="Nome do Personagem" readonly>
+                        </div>
+                    </div>
+                    <div class="class">
+                        <div class="class_title">
+                            <span>CLASSE</span>
+                        </div>
+                        <div class="class_name">
+                            <input name="char4_class_name" id="char4_class_name" type="text" placeholder="Classe"
+                                value="Classe" readonly>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="level_title">
+                            <span>LEVEL</span>
+                        </div>
+                        <div class="level_name">
+                            <input name="char4_level" id="char4_level" type="number" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats_container">
+                <div class="column_stats">
+                    <div class="column_title">
+                        <span>ATRIBUTOS</span>
+                    </div>
+                    <div class="column_stats_content">
+                        <div class="row">
+                            <div class="stats strength">
+                                <span>FORÇA</span>
+                                <input name="char4_strenght" id="char4_strength" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats intelligence">
+                                <span>INTELIGÊNCIA</span>
+                                <input name="char4_intelligence" id="char4_intelligence" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats dexterity">
+                                <span>DESTREZA</span>
+                                <input name="char4_dexterity" id="char4_desterity" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats wisdom">
+                                <span>SABEDORIA</span>
+                                <input name="char4_wisdom" id="char4_wisdom" type="number" value="0" min="0" max="10"
+                                    readonly>
+                            </div>
+                            <div class="stats constitution">
+                                <span>CONSTITUIÇÃO</span>
+                                <input name="char4_constitution" id="char4_constitution" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                            <div class="stats charisma">
+                                <span>CARISMA</span>
+                                <input name="char4_charisma" id="char4_charisma" type="number" value="0" min="0"
+                                    max="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_info">
+                    <div class="row flex_row margin_row">
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>INICIATIVA</span>
+                            </div>
+                            <div class="iniciativa" id="char4_iniciativa_value"
+                                data-tooltip="Indica os dados que deve rolar para definir a sua iniciativa.">
+                                <span>1d20 + 0</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>DESLOC</span>
+                            </div>
+                            <div id="char4_deslocamento_value" class="deslocamento"
+                                data-tooltip="Quantidade de metros que consegue se locomover.">
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>CA</span>
+                            </div>
+                            <div class="life" data-tooltip="Classe de armadura.">
+                                <input name="char4_ca_value" id="char4_ca_value" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>SANIDADE</span>
+                            </div>
+                            <div class="sanity">
+                                <input name="char4_sanity_value" id="char4_sanity_value" type="number" value="100"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="column h60 center_column">
+                            <div class="column_title">
+                                <span>VIDA</span>
+                            </div>
+                            <div class="life">
+                                <input name="char4_life_actual" id="char4_life_actual" type="number" value="10"
+                                    readonly>
+                                <span> / </span>
+                                <input name="char4_life_max" id="char4_life_max" type="number" value="10" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carring">
+                <div class="row flex_row">
+                    <div class="column">
+                        <div class="column_title">
+                            <span>EQUIPAMENTOS ATUAIS</span>
+                        </div>
+                        <table name="table_actual">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Def</th>
+                                <th>Dur</th>
+                            </tr>
+                            <tr>
+                                <td><input name="char4_equipament_helmet_name" id="char4_equipament_helmet_name"
+                                        type="text" value="valor teste teste" readonly>
+                                </td>
+                                <td><input name="char4_equipament_helmet_value" id="char4_equipament_helmet_value"
+                                        type="number" value="10" readonly></td>
+                                <td><input name="char4_equipament_helmet_durability"
+                                        id="char4_equipament_helmet_durability" type="number" value="10" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char4_equipament_chestplate_name" id="char4_equipament_chestplate_name"
+                                        type="text" value="" readonly></td>
+                                <td><input name="char4_equipament_chestplate_value"
+                                        id="char4_equipament_chestplate_value" type="number" value="" readonly></td>
+                                <td><input name="char4_equipament_chestplate_durability"
+                                        id="char4_equipament_chestplate_durability" type="number" value="" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input name="char4_equipament_legs_name" id="char4_equipament_legs_name" type="text"
+                                        value="" readonly>
+                                </td>
+                                <td><input name="char4_equipament_legs_value" id="char4_equipament_legs_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char4_equipament_legs_durability" id="char4_equipament_legs_durability"
+                                        type="number" value="" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input name="char4_equipament_boots_name" id="char4_equipament_boots_name"
+                                        type="text" value="" readonly>
+                                </td>
+                                <td><input name="char4_equipament_boots_value" id="char4_equipament_boots_value"
+                                        type="number" value="" readonly>
+                                </td>
+                                <td><input name="char4_equipament_boots_durability"
+                                        id="char4_equipament_boots_durability" type="number" value="" readonly></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="column">
+                        <div class="column_title">
+                            <span>MOCHILA</span>
+                        </div>
+                        <div class="mochila">
+                            <textarea name="char4_bag_text" id="char4_bag_text" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

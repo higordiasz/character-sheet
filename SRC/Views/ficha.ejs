@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lorem Adventures" />
+    <meta property="og:description" content="Ficha de RPG" />
+    <meta property="og:image" content="<%- url %>" />
+    <meta property="og:image:width" content="443" />
+    <meta property="og:image:height" content="663" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://dias.li" />
+    <meta property="og:site_name" content="Ficha de RPG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@higordiasz" />
+    <meta charset="utf-8">
+    <meta name="description" content="Ficha de RPG">
+    <meta name="author" content="Dias">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="images/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/dz180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/dz32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/dz16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Ficha de Personagem</title>
+    <link rel="stylesheet" href="../css/ficha.css">
+    <script src="../js/ficha.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">
+            <div class="info">
+                <div class="name">
+                    <div class="name_title">
+                        <span>NOME DO PERSONAGEM:</span>
+                    </div>
+                    <div class="name_text">
+                        <input name="character_name" id="character_name" type="text" placeholder="Nome do personagem"
+                            value="">
+                    </div>
+                </div>
+                <div class="class">
+                    <div class="class_title">
+                        <span>CLASSE</span>
+                    </div>
+                    <div class="class_name">
+                        <input name="class_name" id="class_name" type="text" placeholder="Classe" value="">
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="level_title">
+                        <span>LEVEL</span>
+                    </div>
+                    <div class="level_name">
+                        <input name="level" id="level" type="number" value="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stats_container">
+            <div class="column_stats">
+                <div class="column_title">
+                    <span>ATRIBUTOS</span>
+                </div>
+                <div class="column_stats_content">
+                    <div class="row">
+                        <div class="stats strength">
+                            <span>FORÇA</span>
+                            <input name="strenght" id="strength" type="number" value="0" min="0" max="10">
+                        </div>
+                        <div class="stats intelligence">
+                            <span>INTELIGÊNCIA</span>
+                            <input name="intelligence" id="intelligence" type="number" value="0" min="0" max="10">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="stats dexterity">
+                            <span>DESTREZA</span>
+                            <input name="dexterity" id="desterity" type="number" value="0" min="0" max="10">
+                        </div>
+                        <div class="stats wisdom">
+                            <span>SABEDORIA</span>
+                            <input name="wisdom" id="wisdom" type="number" value="0" min="0" max="10">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="stats constitution">
+                            <span>CONSTITUIÇÃO</span>
+                            <input name="constitution" id="constitution" type="number" value="0" min="0" max="10">
+                        </div>
+                        <div class="stats charisma">
+                            <span>CARISMA</span>
+                            <input name="charisma" id="charisma" type="number" value="0" min="0" max="10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column_equipaments">
+                <div class="column_info">
+                    <div class="row">
+                        <div class="column">
+                            <div class="column_title">
+                                <span>INICIATIVA</span>
+                            </div>
+                            <div class="iniciativa" id="iniciativa_value"
+                                data-tooltip="Indica os dados que deve rolar para definir a sua iniciativa.">
+                                <span>1d20 + 0</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="column_title">
+                                <span>DESLOC</span>
+                            </div>
+                            <div id="deslocamento_value" class="deslocamento"
+                                data-tooltip="Quantidade de metros que consegue se locomover.">
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="column_title">
+                                <span>SANIDADE</span>
+                            </div>
+                            <div class="sanity">
+                                <input name="sanity_value" id="sanity_value" type="number" value="100">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="column_title">
+                                <span>CA</span>
+                            </div>
+                            <div class="life" data-tooltip="Classe de armadura.">
+                                <input name="ca_value" id="ca_value" type="number" value="10">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="column_title">
+                                <span>VIDA</span>
+                            </div>
+                            <div class="life">
+                                <input name="life_actual" id="life_actual" type="number" value="10">
+                                <span> / </span>
+                                <input name="life_max" id="life_max" type="number" value="10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column_equip_inventory">
+                        <div class="column_title">
+                            <span>INVENTÁRIO</span>
+                        </div>
+                        <div class="inventory">
+                            <textarea name="inventory_text" id="inventory_text"></textarea>
+                        </div>
+                    </div>
+                    <div class="column_equip_table">
+                        <div class="column_title">
+                            <span>EQUIPAMENTOS GUARDADOS</span>
+                        </div>
+                        <div class="equipaments">
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Val</th>
+                                    <th>Desc</th>
+                                    <th>Dur</th>
+                                </tr>
+                                <tr>
+                                    <td class="equipaments_name"><input name="stored_equipment_1_name"
+                                            id="stored_equipment_1_name" type="text" value=""></td>
+                                    <td class="equipaments_value"><input name="stored_equipment_1_value"
+                                            id="stored_equipment_1_value" type="number" max="100" min="0" value=""></td>
+                                    <td class="equipaments_atrib"><input name="stored_equipment_1_desc"
+                                            id="stored_equipment_1_desc" type="text" value=""></td>
+                                    <td class="equipaments_durability"><input name="stored_equipment_1_durability"
+                                            id="stored_equipment_1_durability" type="number" max="100" min="0" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="equipaments_name"><input name="stored_equipment_2_name"
+                                            id="stored_equipment_2_name" type="text" value=""></td>
+                                    <td class="equipaments_value"><input name="stored_equipment_2_value"
+                                            id="stored_equipment_2_value" type="number" max="100" min="0" value=""></td>
+                                    <td class="equipaments_atrib"><input name="stored_equipment_2_desc"
+                                            id="stored_equipment_2_desc" type="text" value=""></td>
+                                    <td class="equipaments_durability"><input name="stored_equipment_2_durability"
+                                            id="stored_equipment_2_durability" type="number" max="100" min="0" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="equipaments_name"><input name="stored_equipment_3_name"
+                                            id="stored_equipment_3_name" type="text" value=""></td>
+                                    <td class="equipaments_value"><input name="stored_equipment_3_value"
+                                            id="stored_equipment_3_value" type="number" max="100" min="0" value=""></td>
+                                    <td class="equipaments_atrib"><input name="stored_equipment_3_desc"
+                                            id="stored_equipment_3_desc" type="text" value=""></td>
+                                    <td class="equipaments_durability"><input name="stored_equipment_3_durability"
+                                            id="stored_equipment_3_durability" type="number" max="100" min="0" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="equipaments_name"><input name="stored_equipment_4_name"
+                                            id="stored_equipment_4_name" type="text" value=""></td>
+                                    <td class="equipaments_value"><input name="stored_equipment_4_value"
+                                            id="stored_equipment_4_value" type="number" max="100" min="0" value=""></td>
+                                    <td class="equipaments_atrib"><input name="stored_equipment_4_desc"
+                                            id="stored_equipment_4_desc" type="text" value=""></td>
+                                    <td class="equipaments_durability"><input name="stored_equipment_4_durability"
+                                            id="stored_equipment_4_durability" type="number" max="100" min="0" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="equipaments_name"><input name="stored_equipment_5_name"
+                                            id="stored_equipment_5_name" type="text" value=""></td>
+                                    <td class="equipaments_value"><input name="stored_equipment_5_value"
+                                            id="stored_equipment_5_value" type="number" max="100" min="0" value=""></td>
+                                    <td class="equipaments_atrib"><input name="stored_equipment_5_desc"
+                                            id="stored_equipment_5_desc" type="text" value=""></td>
+                                    <td class="equipaments_durability"><input name="stored_equipment_5_durability"
+                                            id="stored_equipment_5_durability" type="number" max="100" min="0" value="">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carring">
+            <div class="row flex_row">
+                <div class="column">
+                    <div class="column_title">
+                        <span>EQUIPAMENTOS ATUAIS</span>
+                    </div>
+                    <table name="table_actual">
+                        <tr>
+                            <th>Equipamento</th>
+                            <th>Valor</th>
+                            <th>Durabilidade</th>
+                        </tr>
+                        <tr>
+                            <td><input name="equipament_helmet_name" id="equipament_helmet_name" type="text" value="">
+                            </td>
+                            <td><input name="equipament_helmet_value" id="equipament_helmet_value" type="number"
+                                    value=""></td>
+                            <td><input name="equipament_helmet_durability" id="equipament_helmet_durability"
+                                    type="number" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input name="equipament_chestplate_name" id="equipament_chestplate_name" type="text"
+                                    value=""></td>
+                            <td><input name="equipament_chestplate_value" id="equipament_chestplate_value" type="number"
+                                    value=""></td>
+                            <td><input name="equipament_chestplate_durability" id="equipament_chestplate_durability"
+                                    type="number" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input name="equipament_legs_name" id="equipament_legs_name" type="text" value=""></td>
+                            <td><input name="equipament_legs_value" id="equipament_legs_value" type="number" value="">
+                            </td>
+                            <td><input name="equipament_legs_durability" id="equipament_legs_durability" type="number"
+                                    value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input name="equipament_boots_name" id="equipament_boots_name" type="text" value="">
+                            </td>
+                            <td><input name="equipament_boots_value" id="equipament_boots_value" type="number" value="">
+                            </td>
+                            <td><input name="equipament_boots_durability" id="equipament_boots_durability" type="number"
+                                    value=""></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="column">
+                    <div class="column_title">
+                        <span>MOCHILA</span>
+                    </div>
+                    <div class="mochila">
+                        <textarea name="bag_text" id="bag_text"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="carring">
+            <div class="row flex_colunm">
+                <div class="column_title">
+                    <span>MAGIAS E HABILIDADES</span>
+                </div>
+                <table name="table_actual">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Buf</th>
+                        <th>Duração</th>
+                        <th>Dano</th>
+                        <th>Cooldown</th>
+                        <th>Penalidade</th>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_1_name" id="magic_1_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_1_buf" id="magic_1_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_1_duraction" id="magic_1_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_1_damage" id="magic_1_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_1_cooldown" id="magic_1_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_1_penality" id="magic_1_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_2_name" id="magic_2_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_2_buf" id="magic_2_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_2_duraction" id="magic_2_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_2_damage" id="magic_2_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_2_cooldown" id="magic_2_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_2_penality" id="magic_2_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_3_name" id="magic_3_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_3_buf" id="magic_3_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_3_duraction" id="magic_3_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_3_damage" id="magic_3_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_3_cooldown" id="magic_3_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_3_penality" id="magic_3_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_4_name" id="magic_4_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_4_buf" id="magic_4_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_4_duraction" id="magic_4_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_4_damage" id="magic_4_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_4_cooldown" id="magic_4_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_4_penality" id="magic_4_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_5_name" id="magic_5_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_5_buf" id="magic_5_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_5_duraction" id="magic_5_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_5_damage" id="magic_5_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_5_cooldown" id="magic_5_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_5_penality" id="magic_5_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_6_name" id="magic_6_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_6_buf" id="magic_6_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_6_duraction" id="magic_6_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_6_damage" id="magic_6_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_6_cooldown" id="magic_6_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_6_penality" id="magic_6_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_7_name" id="magic_7_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_7_buf" id="magic_7_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_7_duraction" id="magic_7_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_7_damage" id="magic_7_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_7_cooldown" id="magic_7_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_7_penality" id="magic_7_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_8_name" id="magic_8_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_8_buf" id="magic_8_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_8_duraction" id="magic_8_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_8_damage" id="magic_8_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_8_cooldown" id="magic_8_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_8_penality" id="magic_8_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_9_name" id="magic_9_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_9_buf" id="magic_9_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_9_duraction" id="magic_9_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_9_damage" id="magic_9_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_9_cooldown" id="magic_9_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_9_penality" id="magic_9_penality" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input name="magic_10_name" id="magic_10_name" type="text" value="">
+                        </td>
+                        <td><input name="magic_10_buf" id="magic_10_buf" type="text" value="">
+                        </td>
+                        <td><input name="magic_10_duraction" id="magic_10_duraction" type="text" value="">
+                        </td>
+                        <td><input name="magic_10_damage" id="magic_10_damage" type="text" value="">
+                        </td>
+                        <td><input name="magic_10_cooldown" id="magic_10_cooldown" type="text" value="">
+                        </td>
+                        <td><input name="magic_10_penality" id="magic_10_penality" type="text" value="">
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="row flex_colunm">
+                <div class="column_title">
+                    <span>DESCRIÇÃO DETALHADA</span>
+                </div>
+                <div class="mochila" style="width: 100%;">
+                    <div class="row">
+                        <textarea name="magic_description_1" id="magic_description_1"></textarea>
+                        <textarea name="magic_description_2" id="magic_description_2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
